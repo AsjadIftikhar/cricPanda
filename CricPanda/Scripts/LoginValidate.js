@@ -22,6 +22,7 @@ function checkLoginFields()
 }
 
 function checkSignupFields() {
+	flag = true;
 	var firstName = document.getElementById("FN").value;
 	var lastName = document.getElementById("LN").value;
 	var userName = document.getElementById("NK").value;
@@ -30,14 +31,18 @@ function checkSignupFields() {
 	if (userName == "" || password == "")
 	{
 		alert("Please Enter All Fields");
+		flag = false;
 	}
 	else if (password.length < 6)
 	{
 		alert("Incorrect Password(Min length 6)");
+		flag = false;
 	}
 	else if (userName.length > 25 || firstName.length > 25 || lastName.length > 25)
 	{
 		alert("Name is too Long(Max 25 characters)");
+		flag = false;
 	}
+	return flag;
 }
 
