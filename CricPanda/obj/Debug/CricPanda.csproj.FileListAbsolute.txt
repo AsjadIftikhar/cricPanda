@@ -72,7 +72,8 @@ C:\Users\iftik\source\repos\Cric Panda\CP\CricPanda\CricPanda\bin\System.Web.Web
 C:\Users\iftik\source\repos\Cric Panda\CP\CricPanda\CricPanda\bin\Newtonsoft.Json.xml
 C:\Users\iftik\source\repos\Cric Panda\CP\CricPanda\CricPanda\bin\Antlr3.Runtime.pdb
 C:\Users\iftik\source\repos\Cric Panda\CP\CricPanda\CricPanda\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\iftik\source\repos\Cric Panda\CP\CricPanda\CricPanda\obj\Debug\CricPanda.csprojAssemblyReference.cache
 C:\Users\iftik\source\repos\Cric Panda\CP\CricPanda\CricPanda\obj\Debug\CricPanda.csproj.CopyComplete
 C:\Users\iftik\source\repos\Cric Panda\CP\CricPanda\CricPanda\obj\Debug\CricPanda.dll
 C:\Users\iftik\source\repos\Cric Panda\CP\CricPanda\CricPanda\obj\Debug\CricPanda.pdb
+C:\Users\iftik\source\repos\Cric Panda\CP\CricPanda\CricPanda\obj\Debug\CricPanda.csprojAssemblyReference.cache
+C:\Users\iftik\source\repos\Cric Panda\CP\CricPanda\CricPanda\obj\Debug\CricPanda.csproj.CoreCompileInputs.cache
