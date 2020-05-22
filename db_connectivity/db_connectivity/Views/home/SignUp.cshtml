@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+<!-- /login-section -->
+<section class="w3l-login-6">
+    <div class="login-hny">
+        <div class="form-content">
+            <div class="form-right">
+                <div class="overlay">
+                    <div class="grid-info-form">
+                        <h3>Welcome to CricPanda </h3>
+                        <p>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            Get live scores, player info, match stats and follow your favorite tournaments’ fixtures and results.
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-left">
+                <div class="middle">
+                    <h4>Sign Up</h4>
+                    <p>Create Your Account, It's Free.</p>
+                </div>
+                <form action="../Users/authsignup" method="post" class="signin-form">
+                    <div class="form-input">
+                        <label>First Name</label>
+                        <input id="FN" type="text" name="firstname" placeholder="First Name" required />
+
+                        <label>Last Name</label>
+                        <input id="LN" type="text" name="lastname" placeholder="Last Name" required />
+
+                        <label>Nick</label>
+                        <input id="NK" type="text" name="userId" placeholder="Username" required />
+
+                        <div class="form-input">
+                            <label>Password</label>
+                            <input type="password" id="Pass" password" name="password" placeholder="Password" required />
+
+
+                        </div>
+
+                        <label for="birthday">Date of Birth:</label>
+                        <input type="date" id="birthday" name="dateOfBirth">
+
+                    </div>
+
+                    <label class="container">
+                        I agree to <a href="#">Conditions</a> of Use and <a href="#">Privacy</a>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <button class="btn" onclick="return checkSignupFields()"> Create account  </button>&nbsp;&nbsp;&nbsp; <label>@Model</label>
+                </form>
+                <div class="copy-right text-center">
+                    <p>
+                        © 2019 CricPanda Signup. All rights reserved
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+

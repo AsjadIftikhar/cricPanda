@@ -1,0 +1,239 @@
+﻿
+@{
+    Layout = null;
+}
+@using CricPanda.Models;
+@model List<Ptable>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Specer Template">
+    <meta name="keywords" content="Specer, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Team Players</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="~/Acss/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Acss/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Acss/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Acss/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="~/Acss/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Acss/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="ht-info">
+                            <ul>
+                                <li>Welcome to CricPanda</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="ht-links">
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="logo">
+                            <a><img src="~/img/banner1.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="nav-menu">
+                            <ul class="main-menu">
+                                <li><a href="/Home/LiveScore">Live Scores</a></li>
+                                <li><a href="../../Users/Teams">Teams</a></li>
+                                <li><a href="../../Home/Index">Tournaments</a></li>
+                                <li class="active"><a href="../../Users/SelectTournament">Stats</a></li>
+                                <li><a href="../../Home/Panda_Home">Panda League</a></li>
+                                @{
+                                    if (Session["username"].ToString() == "admin123")
+                                    {
+                                        <li><a href="../../Users/Create">Admin Panel</a></li>
+                                    }
+                                }
+
+                                @*<li>
+            <a href="#">Pages</a>
+            <ul class="dropdown">
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./blog-details.html">Blog Details</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">Results</a></li>
+            </ul>
+        </li>
+        <li><a href="./contact.html">Contact Us</a></li>*@
+                            </ul>
+                            @*<div class="nm-right search-switch">
+                                    <i class="fa fa-search"></i>
+                                </div>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="canvas-open">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+    <div style="padding-top: 3rem;"></div>
+    <!-- Club Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="../../img/B.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bs-text">
+                        <h2>@ViewBag.T_Name</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Section Begin -->
+    <section class="latest-section">
+        <div class="container">
+            <div class="more-blog">
+                <a href="../../Users/Stats?id=@ViewBag.TID"><i class="fa fa-long-arrow-left"></i> Tournament Stats</a>
+                <a href="../../Users/PTtable?id=@ViewBag.TID">Tournament Points Table <i class="fa fa-long-arrow-right"></i></a>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="section-title">
+                        <div style="padding-top: 4rem;"></div>
+                        <h3>Tournament <span>Points Table</span></h3>
+                    </div>
+                    <div class="points-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="th-o">Pos</th>
+                                    <th>Team</th>
+                                    <th class="th-o">M</th>
+                                    <th class="th-o">W</th>
+                                    <th class="th-o">L</th>
+                                    <th class="th-o">Rating</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (Ptable pt in Model)
+                                {
+                                    <tr>
+                                        <td>@pt.pos</td>
+                                        <td class="team-name">
+                                            <img src="@pt.Flag" alt="">
+                                            <span>@pt.Team</span>
+                                        </td>
+                                        <td>@pt.Total</td>
+                                        <td>@pt.Wins</td>
+                                        <td>@pt.Lost</td>
+                                        <td>@pt.Rating</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Club Section End -->
+    <div style="padding: 3rem;"></div>
+    <!-- Footer Section Begin -->
+    <footer class="footer-section set-bg" data-setbg="../../img/footer-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="fs-logo">
+                        <div class="logo">
+                            <a><h2 style="color: white;">CricPanda</h2></a>
+                        </div>
+                        <ul>
+                            <li><i class="fa fa-envelope"></i> CricPanda@gmail.com</li>
+                            <li><i class="fa fa-copy"></i> +(92)300 678910</li>
+                            <li><i class="fa fa-thumb-tack"></i> FAST Millat Sreet Faysal Town Lahore, Pakistan</li>
+                        </ul>
+                        <div class="fs-social">
+                            <a><i class="fa fa-facebook"></i></a>
+                            <a><i class="fa fa-twitter"></i></a>
+                            <a><i class="fa fa-tumblr"></i></a>
+                            <a><i class="fa fa-linkedin"></i></a>
+                            <a><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright-option">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="co-text">
+                            <p>
+
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved
+
+                            </p>
+                        </div>
+                        <div class="co-widget">
+                            <ul>
+                                <li><a>Copyright notification</a></li>
+                                <li><a>Terms of Use</a></li>
+                                <li><a>Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <div style="padding: 3rem;"></div>
+    <!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch"><i class="fa fa-close"></i></div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+    <!-- Js Plugins -->
+    <script src="~/Ajs/jquery-3.3.1.min.js"></script>
+    <script src="~/Ajs/bootstrap.min.js"></script>
+    <script src="~/Ajs/jquery.magnific-popup.min.js"></script>
+    <script src="~/Ajs/jquery.slicknav.js"></script>
+    <script src="~/Ajs/owl.carousel.min.js"></script>
+    <script src="~/Ajs/main.js"></script>
+</body>
+</html>

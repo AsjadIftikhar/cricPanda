@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}@model  string
+<section class="w3l-login-6">
+    <div class="login-hny">
+        <div class="form-content">
+            <div class="form-right">
+                <div class="overlay">
+                    <div class="grid-info-form">
+                        <h3>Welcome to CricPanda </h3>
+                        <p>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            Get live scores, player info, match stats and follow your favorite tournaments’ fixtures and results.
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-left">
+                <div class="middle">
+                    <h4>Sign In</h4>
+                    <p>No Account? <a href="/Home/SignUp" class="text-decoration-none">Create One</a> </p>
+                </div>
+                <form action="../Home/authenticate" method="post" class="signin-form">
+                    <div class="form-input">
+
+                        <label>Nick</label>
+                        <input id="1" text" name="nickname" placeholder="Username" required />
+
+                        <div class="form-input">
+                            <label>Password</label>
+                            <input type="password" id="2" password" name="pass" placeholder="Password" required />
+                        </div>
+                        <a href="#" class="text-decoration-none">Forgot Password?</a>
+                    </div>
+
+
+                    <button class="btn" onclick="return checkLoginFields()">Login</button> &nbsp;&nbsp;&nbsp; <label>@Model</label>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
