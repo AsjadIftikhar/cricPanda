@@ -1,0 +1,90 @@
+﻿
+@{
+    Layout = null;
+}
+@using CricPanda.Models;
+@model string
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet"
+          href="https://unpkg.com/98.css">
+    <title>Delete</title>
+</head>
+<body>
+    <div style="background-color: lightgray">
+        <div class="title-bar">
+            <div class="title-bar-text">DELETE FROM DATABASE</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+
+        <hr>
+        <button onclick="location.href = '../../Users/Create';" style="margin: 10px">INSERT</button>
+        <button onclick="location.href = '../../Users/Update';" style="margin: 10px">UPDATE</button>
+        <button onclick="location.href = '../../Users/Teams';" style="margin: 10px">Go to Website</button>
+
+
+        <hr>
+        <label>Status: @Model</label>
+        <hr>
+        <div style="margin: 5rem;">
+
+
+            <div class="window" style="width: 500px; margin-bottom: 50px">
+                <div class="title-bar">
+                    <div class="title-bar-text">Remove Player</div>
+
+                </div>
+                <div class="window-body">
+                    <form method="post" action="../../Users/RemovePlayer">
+                        <div class="field-row">
+                            <div class="field-row">Select Player:</div>
+                            <select style="margin: 20px" id="Team" name="pname">
+                                @foreach (Players p in ViewBag.Players)
+                                {
+                                    <option>@p.Player_Name</option>
+                                }
+
+                            </select>
+                        </div>
+                        <hr>
+
+                        <button type="submit" style="margin: 10px">Remove</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="window" style="width: 500px; margin-bottom: 50px">
+                <div class="title-bar">
+                    <div class="title-bar-text">Remove Stadium</div>
+
+                </div>
+                <div class="window-body">
+                    <form method="post" action="../../Users/RStadium">
+                        <div class="field-row">
+                            <div class="field-row">Select Stadium:</div>
+                            <select style="margin: 20px" id="Team" name="stadium">
+                                @foreach (Stadium s in ViewBag.stadium)
+                                {
+                                    <option>@s.city</option>
+                                }
+
+                            </select>
+                        </div>
+                        <hr>
+                        <button type="submit" style="margin: 10px">Remove</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+
