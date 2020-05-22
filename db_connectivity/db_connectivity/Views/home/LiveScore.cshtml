@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+@using db_connectivity.Models;
+@model List<LiveScoreModel>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/Acss/LiveScore.css">
+    <link rel="icon" href="~/fonts/white logo.svg">
+    <script src="~/Scripts/LiveScore.js" type="text/javascript"></script>
+    <title>LiveScore</title>
+</head>
+<body>
+    <div class="div">
+        <img class="i1" src="~/fonts/white logo.svg" alt="">
+        <a class="a" href="/Home/LiveScore">Live score</a>
+        <a class="a" href="../../Home/Index">Tournaments</a>
+        <a class="a" href="../../Users/Teams">Teams</a>
+        <a class="a" href="../../Users/SelectTournament">Stats</a>
+        <a class="a" href="../../Home/Panda_Home">Panda league</a>
+        @{
+            if (Session["username"].ToString() == "admin123")
+            {
+                <a class="a" href="../../Users/Create">Admin Panel</a>
+            }
+        }
+        <a href="/Home/UserPage" class="user image"><img class="i2" src="~/fonts/UserImage.svg" alt=""></a>
+
+    </div>
+
+
+    <div class="WholeBelowNav">
+        <div class="cardContainer">
+            @foreach (LiveScoreModel live in Model)
+            {
+                <a href="/Home/Scorecard?match_id=@live.match_ID" style="text-decoration:none;">
+                    <div class="Wholecard">
+                        <img class="green-dot" src="~/fonts/green dot.png" />
+                        <p class="live-txt">live</p>
+                        <img src=@live.team1Flag class="cardFlag1" />
+                        <p class="Team1Name">@live.team1Name</p>
+                        <p class="vs">vs</p>
+                        <p class="stadium">( @live.stadium )</p>
+                        <img src=@live.team2Flag class="cardFlag2" />
+                        <p class="Team2Name">@live.team2Name</p>
+                        <p class="Dateplace"> Date: </p>
+                        <p class="Date">@live.matchDate</p>
+                        <p class="Tournament-name">@live.tounamentName</p>
+                    </div>
+                </a>
+                <p class="Tournament-place">(@live.tournamentLocation) </p>
+
+            }
+
+        </div>
+    </div>
+
+</body>
+</html>
+

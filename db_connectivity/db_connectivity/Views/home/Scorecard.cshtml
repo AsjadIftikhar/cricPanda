@@ -1,0 +1,484 @@
+﻿@{
+    Layout = null;
+}
+
+
+@using db_connectivity.Models;
+@model List<ScoreCard2>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="~/Acss/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Acss/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Acss/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Acss/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="~/Acss/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Acss/style.css" type="text/css">
+
+    <style>
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+        }
+
+            a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+        .previous {
+            background-color: #f1f1f1;
+            color: black;
+        }
+
+        .next {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .round {
+            border-radius: 50%;
+        }
+    </style>
+
+
+
+
+
+    <style>
+
+
+
+        div.All {
+        }
+
+        div.container h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 5em;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.42);
+            margin-bottom: 0.2em;
+            color: black;
+        }
+
+        div.Tour_name h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 3em;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.42);
+            margin-bottom: 0.2em;
+            color: black;
+        }
+
+        div.Loc_name h1 {
+            color: black;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        div.Team_name h1 {
+            color: black;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        div.Date_name h1 {
+            margin-top: 10px;
+            color: maroon;
+            font-style: oblique;
+            font-size: 25px;
+            text-align: left;
+        }
+
+        div.Venue_name h1 {
+            margin-top: 60px;
+            font-style: oblique;
+            color: maroon;
+            font-size: 25px;
+            text-align: left;
+        }
+
+        div.Winner_name h1 {
+            color: black;
+            font-size: 35px;
+            text-align: left;
+            text-shadow: 2px 2px 5px red;
+        }
+
+        div.MOM_name h1 {
+            color: black;
+            font-size: 25px;
+            text-align: left;
+            text-shadow: 2px 2px;
+        }
+
+        div.L1 h1 {
+            color: black;
+            font-size: 3.5em;
+            text-align: left;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.42);
+        }
+
+        div.LL1 h1 {
+            color: forestgreen;
+            font-size: 30px;
+            text-align: left;
+            background-color: gold;
+        }
+
+        div.LLL1 h1 {
+            color: gold;
+            font-size: 30px;
+            text-align: left;
+            background-color: forestgreen
+        }
+    </style>
+
+
+    <link href="../../Content/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="../../Content/about.css" rel='stylesheet' type='text/css' />
+
+
+    <style>
+
+
+        .NAV_BAR.a {
+            text-align: center;
+            position: relative;
+            bottom: 20px;
+            right: 2.5%;
+            margin: auto 10px auto 10px;
+            text-decoration: none;
+            background-color: black;
+            display: table-row-group;
+            width: 20px;
+            border-width: 10px;
+            color: black;
+            padding-top: 10px;
+            padding-bottom: 1px;
+            border-radius: 2px;
+            box-shadow: 0 2px 2px 0 #000;
+            font-weight: bold;
+        }
+
+            .NAV_BAR.a:hover {
+                background-color: black;
+                color: black;
+            }
+    </style>
+
+    <style>
+        body {
+            background-image: url('../../images/conclud.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="ht-info">
+                            <ul>
+                                <li>Welcome to CricPanda</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="ht-links">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-vimeo"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="logo">
+                            <a><img src="~/img/banner1.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="nav-menu">
+                            <ul class="main-menu">
+                                <li><a href="/Home/LiveScore">Live Scores</a></li>
+                                <li class="active"><a href="../../Users/Teams">Teams</a></li>
+                                <li><a href="../../Home/Index">Tournaments</a></li>
+                                <li><a href="../../Users/SelectTournament">Stats</a></li>
+                                <li><a href="../../Home/Panda_Home">Panda League</a></li>
+                                @{
+                                    if (Session["username"].ToString() == "admin123")
+                                    {
+                                        <li><a href="../../Users/Create">Admin Panel</a></li>
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="canvas-open">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <div class="services-breadcrumb">
+        <div class="inner_breadcrumb">
+
+        </div>
+    </div>
+
+
+
+    <div class="All">
+
+        <div class="container">
+
+            <br />
+            <h1> SCORECARD </h1>
+        </div>
+
+
+
+        @foreach (ScoreCard1 user in @ViewBag.ScoreCard1)
+        {
+            <div class="Tour_name">
+                <h1>  @user.Tournament_Name  </h1>
+            </div>
+
+            <div class="Loc_name">
+                <h1> <b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (@user.Loc) </b>   </h1>
+            </div>
+            <br />
+            <div class="Team_name">
+                <h1> - #@user.Team1 vs #@user.Team2 - </h1>
+            </div>
+
+            <div class="Venue_name">
+                <h1>&nbsp;=> STADIUM : @user.Stadium_Name </h1>
+            </div>
+
+            <div class="Date_name">
+                <h1>&nbsp;=> DATE : @user.Match_Date </h1>
+            </div>
+
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <div class="Winner_name">
+
+
+                <h1>&nbsp; @user.Winner_Team WON THE MATCH </h1>
+
+            </div>
+            <br />
+            <div class="MOM_name">
+
+
+                <h1>&nbsp; &nbsp; MAN OF THE MATCH : @user.MOM  </h1>
+
+            </div>
+        }
+        <br />
+    </div>
+
+    <div class="All2">
+        <div class="team1">
+
+            <style>
+                table {
+                    border-collapse: collapse;
+                    width: 100%;
+                }
+
+                th, td {
+                    text-align: left;
+                    padding: 8px;
+                }
+
+                tr:nth-child(even) {
+                    background-color: cornflowerblue
+                }
+
+                th {
+                    background-color: #4CAF50;
+                    color: white;
+                }
+            </style>
+
+
+
+
+
+            <br />
+            <br />
+            <br />
+
+
+            @foreach (ScoreCard1 user in @ViewBag.ScoreCard1)
+            {
+
+                foreach (ScoreCard4 user4 in ViewBag.ScoreCard4)
+                {
+
+
+
+
+                    <div class="L1">
+                        <h1> @user.Team1 INNINGS &nbsp;&nbsp;&nbsp;@user4.Runs_Scored1/@user4.Wickets_Taken2 (@user4.Overs_Bowled2) </h1>
+                    </div>
+
+
+                    <div class="LLL1">
+                        <h1> @user.Team1 BATTING </h1>
+                    </div>
+
+
+                    <table class="myTable">
+                        <thead><tr><th>Player_Name</th> <th>Runs_scored</th> <th>Balls_Faced</th> <th>Sixes</th></tr></thead>
+
+
+
+                        @foreach (ScoreCard2 user1 in @Model)
+                        {
+                            <tr>
+                                <td>@user1.Player_Name </td>
+                                <td>@user1.Runs_scored </td>
+                                <td>@user1.Balls_Faced </td>
+                                <td>@user1.Sixes </td>
+                            </tr>
+                        }
+
+                    </table>
+
+                    <br />
+                    <div class="LL1">
+                        <h1> @user.Team2 BOWLING </h1>
+                    </div>
+
+
+                    <table class="myTable1">
+                        <thead><tr><th>Player_Name</th><th>Runs_Conceded</th> <th>Overs_Bowled</th> <th>Wickets_Taken</th> </tr></thead>
+
+
+
+                        @foreach (ScoreCard2 user1 in @ViewBag.ScoreCard2)
+                        {
+                            if (user1.Total_Overs_Bowled != "0")
+                            {
+                                <tr>
+                                    <td>@user1.Player_Name </td>
+                                    <td>@user1.Runs_Conceded </td>
+                                    <td>@user1.Total_Overs_Bowled </td>
+                                    <td>@user1.Wickets_Taken </td>
+                                </tr>
+                            }
+
+                        }
+
+                    </table>
+
+                    <br />
+                    <br />
+
+                    <div class="L1">
+                        <h1> @user.Team2 INNINGS &nbsp;&nbsp;&nbsp;@user4.Runs_Scored2/@user4.Wickets_Taken1 (@user4.Overs_Bowled1) </h1>
+                    </div>
+
+
+                    <div class="LLL1">
+                        <h1> @user.Team2 BATTING </h1>
+                    </div>
+
+
+                    <table class="myTable">
+                        <thead><tr><th>Player_Name</th> <th>Runs_scored</th> <th>Balls_Faced</th> <th>Sixes</th></tr></thead>
+
+
+
+                        @foreach (ScoreCard2 user1 in @ViewBag.ScoreCard2)
+                        {
+                            <tr>
+                                <td>@user1.Player_Name </td>
+                                <td>@user1.Runs_scored </td>
+                                <td>@user1.Balls_Faced </td>
+                                <td>@user1.Sixes </td>
+                            </tr>
+                        }
+
+                    </table>
+
+                    <br />
+                    <div class="LL1">
+                        <h1> @user.Team1 BOWLING </h1>
+                    </div>
+
+
+                    <table class="myTable1">
+                        <thead><tr><th>Player_Name</th><th>Runs_Conceded</th> <th>Overs_Bowled</th> <th>Wickets_Taken</th> </tr></thead>
+
+
+
+                        @foreach (ScoreCard2 user1 in @Model)
+                        {
+                            if (user1.Total_Overs_Bowled != "0")
+                            {
+                                <tr>
+                                    <td>@user1.Player_Name </td>
+                                    <td>@user1.Runs_Conceded </td>
+                                    <td>@user1.Total_Overs_Bowled </td>
+                                    <td>@user1.Wickets_Taken </td>
+                                </tr>
+                            }
+                        }
+
+                    </table>
+
+
+                    <br />
+                    <br />
+
+
+                }
+            }
+        </div>
+        <!-- //about -->
+    </div>
+    <script src="~/Ajs/jquery-3.3.1.min.js"></script>
+    <script src="~/Ajs/bootstrap.min.js"></script>
+    <script src="~/Ajs/jquery.magnific-popup.min.js"></script>
+    <script src="~/Ajs/jquery.slicknav.js"></script>
+    <script src="~/Ajs/owl.carousel.min.js"></script>
+    <script src="~/Ajs/main.js"></script>
+</body>
+
+</html>

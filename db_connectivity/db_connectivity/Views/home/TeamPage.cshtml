@@ -1,0 +1,394 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using db_connectivity.Models;
+@model List<Panda_Team_Players>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Frontend Dev Course</title>
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+
+
+    @{ var index = 0;}
+    @{ List<Panda_Team_Players> user = Model;}
+
+    <div class="banner">
+        <div class="container">
+            <div class="top-nav">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        
+                        <h1><a class="navbar-brand" href="../../Home/Panda_Home">Panda League</a></h1>
+                    </div>
+                   
+                </nav>
+            </div>
+          
+        </div>
+    </div>
+
+    <div class="gray-container">
+
+        <div class="container">
+
+            <style>
+                body {
+                    margin: 0;
+                    font-family: 'Montserrat', sans-serif;
+                    background-image: url('../../images/2866128.jpg');
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-size: 100% 100%;
+                }
+            </style>
+
+            <ul>
+
+                <li>
+
+
+                <li>
+                    <figure>
+                        @if (user[0].Player_Role == "Batsman")
+                        {
+                            <img src="~/images/batsman.ico" alt="User testimonial picture">
+                        }
+                        else if (user[0].Player_Role == "Wicket Keeper")
+                        {
+                            <img src="~/images/wicket.ico" alt="User testimonial picture">
+
+                        }
+                        else if (user[0].Player_Role == "Bowler")
+                        {
+                            <img src="~/images/baller.ico" alt="User testimonial picture">
+
+                        }
+                        else
+                        {
+                            <img src="~/images/allrounder.ico" alt="User testimonial picture">
+
+                        }
+
+                        <figcaption>@user[0].Player_Name</figcaption>
+
+                        <blockquote><strong>@user[0].Player_Role</strong> </blockquote>
+                        <blockquote><strong>@user[0].Team_Name</strong> </blockquote>
+                    </figure>
+                </li>
+
+                <li>
+                    <figure>
+                        @if (user[1].Player_Role == "Batsman")
+                        {
+                            <img src="~/images/batsman.ico" alt="User testimonial picture">
+                        }
+                        else if (user[1].Player_Role == "Wicket Keeper")
+                        {
+                            <img src="~/images/wicket.ico" alt="User testimonial picture">
+
+                        }
+                        else if (user[1].Player_Role == "Bowler")
+                        {
+                            <img src="~/images/baller.ico" alt="User testimonial picture">
+
+                        }
+                        else
+                        {
+                            <img src="~/images/allrounder.ico" alt="User testimonial picture">
+
+                        }
+                        <figcaption>@user[1].Player_Name</figcaption>
+
+                        <blockquote><strong>@user[1].Player_Role</strong> </blockquote>
+                        <blockquote><strong>@user[1].Team_Name</strong> </blockquote>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        @if (user[2].Player_Role == "Batsman")
+                        {
+                            <img src="~/images/batsman.ico" alt="User testimonial picture">
+                        }
+                        else if (user[2].Player_Role == "Wicket Keeper")
+                        {
+                            <img src="~/images/wicket.ico" alt="User testimonial picture">
+
+                        }
+                        else if (user[2].Player_Role == "Bowler")
+                        {
+                            <img src="~/images/baller.ico" alt="User testimonial picture">
+
+                        }
+                        else
+                        {
+                            <img src="~/images/allrounder.ico" alt="User testimonial picture">
+
+                        }
+                        <figcaption>@user[2].Player_Name</figcaption>
+
+                        <blockquote><strong>@user[2].Player_Role</strong> </blockquote>
+                        <blockquote><strong>@user[2].Team_Name </strong></blockquote>
+
+                    </figure>
+                </li>
+
+                <li>
+                    <figure>
+                        @if (user[3].Player_Role == "Batsman")
+                        {
+                            <img src="~/images/batsman.ico" alt="User testimonial picture">
+                        }
+                        else if (user[3].Player_Role == "Wicket Keeper")
+                        {
+                            <img src="~/images/wicket.ico" alt="User testimonial picture">
+
+                        }
+                        else if (user[3].Player_Role == "Bowler")
+                        {
+                            <img src="~/images/baller.ico" alt="User testimonial picture">
+
+                        }
+                        else
+                        {
+                            <img src="~/images/allrounder.ico" alt="User testimonial picture">
+
+                        }
+                        <figcaption>@user[3].Player_Name</figcaption>
+
+                        <blockquote><strong>@user[3].Player_Role </strong></blockquote>
+                        <blockquote><strong>@user[3].Team_Name </strong></blockquote>
+
+                    </figure>
+                </li>
+
+                <li>
+                    <figure>
+                        @if (user[4].Player_Role == "Batsman")
+                        {
+                            <img src="~/images/batsman.ico" alt="User testimonial picture">
+                        }
+                        else if (user[4].Player_Role == "Wicket Keeper")
+                        {
+                            <img src="~/images/wicket.ico" alt="User testimonial picture">
+
+                        }
+                        else if (user[4].Player_Role == "Bowler")
+                        {
+                            <img src="~/images/baller.ico" alt="User testimonial picture">
+
+                        }
+                        else
+                        {
+                            <img src="~/images/allrounder.ico" alt="User testimonial picture">
+
+                        }
+                        <figcaption>@user[4].Player_Name</figcaption>
+
+                        <blockquote><strong>@user[4].Player_Role</strong> </blockquote>
+                        <blockquote><strong>@user[4].Team_Name </strong></blockquote>
+
+                    </figure>
+                </li>
+
+
+                <li>
+                    <figure>
+                        @if (user[5].Player_Role == "Batsman")
+                        {
+                            <img src="~/images/batsman.ico" alt="User testimonial picture">
+                        }
+                        else if (user[5].Player_Role == "Wicket Keeper")
+                        {
+                            <img src="~/images/wicket.ico" alt="User testimonial picture">
+
+                        }
+                        else if (user[5].Player_Role == "Bowler")
+                        {
+                            <img src="~/images/baller.ico" alt="User testimonial picture">
+
+                        }
+                        else
+                        {
+                            <img src="~/images/allrounder.ico" alt="User testimonial picture">
+
+                        }
+                        <figcaption>@user[5].Player_Name</figcaption>
+
+                        <blockquote><strong>@user[5].Player_Role</strong> </blockquote>
+                        <blockquote><strong>@user[5].Team_Name</strong> </blockquote>
+
+
+                    </figure>
+                </li>
+            </ul>
+            <ul>
+
+                <li>
+                    <figure>
+                        @if (user[6].Player_Role == "Batsman")
+                        {
+                            <img src="~/images/batsman.ico" alt="User testimonial picture">
+                        }
+                        else if (user[6].Player_Role == "Wicket Keeper")
+                        {
+                            <img src="~/images/wicket.ico" alt="User testimonial picture">
+
+                        }
+                        else if (user[6].Player_Role == "Bowler")
+                        {
+                            <img src="~/images/baller.ico" alt="User testimonial picture">
+
+                        }
+                        else
+                        {
+                            <img src="~/images/allrounder.ico" alt="User testimonial picture">
+
+                        }
+                        <figcaption>@user[6].Player_Name</figcaption>
+
+                        <blockquote><strong>@user[6].Player_Role</strong> </blockquote>
+                        <blockquote><strong>@user[6].Team_Name </strong></blockquote>
+
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        @if (user[7].Player_Role == "Batsman")
+                        {
+                            <img src="~/images/batsman.ico" alt="User testimonial picture">
+                        }
+                        else if (user[7].Player_Role == "Wicket Keeper")
+                        {
+                            <img src="~/images/wicket.ico" alt="User testimonial picture">
+
+                        }
+                        else if (user[7].Player_Role == "Bowler")
+                        {
+                            <img src="~/images/baller.ico" alt="User testimonial picture">
+
+                        }
+                        else
+                        {
+                            <img src="~/images/allrounder.ico" alt="User testimonial picture">
+
+                        }
+                        <figcaption>@user[7].Player_Name</figcaption>
+
+                        <blockquote><strong>@user[7].Player_Role</strong> </blockquote>
+                        <blockquote><strong>@user[7].Team_Name </strong></blockquote>
+
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        @if (user[8].Player_Role == "Batsman")
+                        {
+                            <img src="~/images/batsman.ico" alt="User testimonial picture">
+                        }
+                        else if (user[8].Player_Role == "Wicket Keeper")
+                        {
+                            <img src="~/images/wicket.ico" alt="User testimonial picture">
+
+                        }
+                        else if (user[8].Player_Role == "Bowler")
+                        {
+                            <img src="~/images/baller.ico" alt="User testimonial picture">
+
+                        }
+                        else
+                        {
+                            <img src="~/images/allrounder.ico" alt="User testimonial picture">
+
+                        }
+                        <figcaption>@user[8].Player_Name</figcaption>
+
+                        <blockquote><strong>@user[8].Player_Role </strong></blockquote>
+                        <blockquote><strong>@user[8].Team_Name </strong></blockquote>
+
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        @if (user[9].Player_Role == "Batsman")
+                        {
+                            <img src="~/images/batsman.ico" alt="User testimonial picture">
+                        }
+                        else if (user[9].Player_Role == "Wicket Keeper")
+                        {
+                            <img src="~/images/wicket.ico" alt="User testimonial picture">
+
+                        }
+                        else if (user[9].Player_Role == "Bowler")
+                        {
+                            <img src="~/images/baller.ico" alt="User testimonial picture">
+
+                        }
+                        else
+                        {
+                            <img src="~/images/allrounder.ico" alt="User testimonial picture">
+
+                        }
+                        <figcaption>@user[9].Player_Name</figcaption>
+
+                        <blockquote><strong>@user[9].Player_Role</strong> </blockquote>
+                        <blockquote><strong>@user[9].Team_Name </strong></blockquote>
+
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        @if (user[10].Player_Role == "Batsman")
+                        {
+                            <img src="~/images/batsman.ico" alt="User testimonial picture">
+                        }
+                        else if (user[10].Player_Role == "Wicket Keeper")
+                        {
+                            <img src="~/images/wicket.ico" alt="User testimonial picture">
+
+                        }
+                        else if (user[10].Player_Role == "Bowler")
+                        {
+                            <img src="~/images/baller.ico" alt="User testimonial picture">
+
+                        }
+                        else
+                        {
+                            <img src="~/images/allrounder.ico" alt="User testimonial picture">
+
+                        }
+                        <figcaption>@user[10].Player_Name</figcaption>
+
+                        <blockquote><strong>@user[10].Player_Role</strong> </blockquote>
+                        <blockquote><strong>@user[10].Team_Name </strong></blockquote>
+
+                    </figure>
+                </li>
+
+
+
+            </ul>
+
+
+
+
+            <div class="text-center small"><strong>Move To </strong> <a href="../../Home/Panda_Home"><strong>Home</strong></a></div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

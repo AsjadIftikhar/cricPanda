@@ -1,0 +1,85 @@
+﻿
+@{
+    Layout = null;
+}
+@using db_connectivity.Models;
+@model Users
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="~/Content/UserPage.css">
+    <link rel="icon" href="~/fonts/white logo.svg">
+
+    <style>
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
+
+          
+            .container .btn {
+                position: absolute;
+                top: 50%;
+                left: 250%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                background-color: #f1f1f1;
+                color: black;
+                font-size: 20px;
+                padding: 20px 50px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                text-align: center;
+            }
+
+                .container .btn:hover {
+                    background-color: #2b2e4a;
+                    color: white;
+                }
+    </style>
+   
+    
+</head>
+<body>
+    <a href="/Home/LiveScore"><img class="back-button" src="~/fonts/Back button.svg" alt="not exist"></a>
+    <img class="sports" src="~/fonts/Sports_(65).jpg" alt="not found">
+    <img class="user-img" src="~/fonts/UserImage.svg" alt="not found">
+    <img class="panda-image" src="~/fonts/white logo.svg" alt="not found">
+    <div class="top-container">
+        <h1>@Model.first_name @Model.last_name</h1>
+    </div>
+
+    <div class="bottom-container">
+        <h2>Personal Info</h2>
+        <h3>Username</h3>
+        <h3 class="h3-2">@Model.username</h3>
+        <h3>Password</h3>
+        <h3 class="h3-2">@Model.password</h3>
+        <h3>DoB</h3>
+        <h3 class="h3-2">@Model.data_of_birth</h3>
+    </div>
+
+
+    <h2 id="pref_head">Preference</h2>
+    <div class="country-container">
+        <img src=@Model.team_pref_img class="FlagImg" />
+        <h3 class="countryTXT">@Model.team_pref</h3>
+    </div>
+
+
+
+    <div class="container" style="width:350px;" align="center">
+        <p>
+            <a href="../../Home/Sign_Out" class="btn btn-info btn-lg" >
+                <span class="glyphicon glyphicon-log-out" ></span>LOGOUT </a>
+        </p>
+
+    </div>
+
+
+</body>
+</html>
